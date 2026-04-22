@@ -1,0 +1,30 @@
+manifestVersion: 1
+id: qa1k-onyx
+name: Onyx (bootstrap)
+tagline: Заготовка Umbrel-пакета для Onyx
+icon: https://raw.githubusercontent.com/onyx-dot-app/onyx/main/web/public/logo.png
+category: AI
+version: "0.1.0"
+port: 42020
+description: >-
+  Onyx — большой стек из нескольких сервисов (Postgres, Vespa, Redis и т.д.).
+  Этот пакет — "bootstrap"-страница в Umbrel, чтобы держать инструкцию/ссылки
+  в App Store и подготовить место под конфиги.
+
+  Для полноценного запуска Onyx в Docker используйте официальный compose:
+  https://docs.onyx.app/deployment/local/docker
+
+  Когда захотите, мы заменим docker-compose.yml этого приложения на настоящий
+  multi-service compose Onyx и перенесём данные в ${APP_DATA_DIR}.
+
+developer: onyx-dot-app
+website: https://docs.onyx.app
+repo: https://github.com/onyx-dot-app/onyx
+support: https://github.com/onyx-dot-app/onyx/issues
+gallery: []
+releaseNotes: >-
+  Первый черновик Umbrel-обёртки.
+dependencies: []
+path: ""
+defaultUsername: ""
+defaultPassword: ""

@@ -1,0 +1,13 @@
+version: "3.7"
+
+services:
+  app_proxy:
+    environment:
+      APP_HOST: qa1k-websurfx_app_1
+      APP_PORT: 8080
+
+  app:
+    image: neonmmd/websurfx:latest
+    restart: on-failure
+    volumes:
+      - ${APP_DATA_DIR}/config:/etc/xdg/websurfx

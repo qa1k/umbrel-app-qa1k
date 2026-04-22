@@ -1,0 +1,22 @@
+manifestVersion: 1
+id: qa1k-vane
+name: Vane
+tagline: Self-hosted AI web app
+icon: https://raw.githubusercontent.com/ItzCrazyKns/Vane/master/public/favicon.ico
+category: AI
+version: "0.1.0"
+port: 42022
+description: >-
+  Vane — веб-приложение от ItzCrazyKns.
+
+developer: ItzCrazyKns
+website: https://github.com/ItzCrazyKns/Vane
+repo: https://github.com/ItzCrazyKns/Vane
+support: https://github.com/ItzCrazyKns/Vane/issues
+gallery: []
+releaseNotes: >-
+  Первый черновик Umbrel-обёртки.
+dependencies: []
+path: ""
+defaultUsername: ""
+defaultPassword: ""

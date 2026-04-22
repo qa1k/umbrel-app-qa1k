@@ -1,0 +1,26 @@
+manifestVersion: 1
+id: qa1k-khoj
+name: Khoj
+tagline: Ваш локальный AI-ассистент (RAG + чат)
+icon: https://raw.githubusercontent.com/khoj-ai/khoj/master/src/khoj/interface/web/static/icons/favicon-32x32.png
+category: AI
+version: "0.1.0"
+port: 42023
+description: >-
+  Khoj — self-hosted AI assistant. В этом пакете есть Postgres (pgvector),
+  SearxNG и sandbox (Terrarium) как в официальном compose.
+
+  После установки откройте приложение и задайте пароль администратора
+  через переменные окружения (используется Umbrel APP_PASSWORD).
+
+developer: khoj-ai
+website: https://docs.khoj.dev
+repo: https://github.com/khoj-ai/khoj
+support: https://github.com/khoj-ai/khoj/issues
+gallery: []
+releaseNotes: >-
+  Первый черновик Umbrel-обёртки.
+dependencies: []
+path: ""
+defaultUsername: "admin"
+deterministicPassword: true

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Onyx (bootstrap)</title>
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; margin: 24px; max-width: 900px; }
+    code, pre { background: #111827; color: #e5e7eb; padding: 2px 6px; border-radius: 6px; }
+    pre { padding: 12px; overflow: auto; }
+    a { color: #2563eb; }
+    .card { border: 1px solid #e5e7eb; border-radius: 12px; padding: 16px; margin: 16px 0; }
+  </style>
+</head>
+<body>
+  <h2>Onyx (bootstrap)</h2>
+  <div class="card">
+    <p>
+      Onyx разворачивается как <b>несколько контейнеров</b> (Postgres, Vespa, Redis, web/api и т.д.).
+      Этот Umbrel-пакет сейчас — <b>заготовка</b>, чтобы держать ссылку/инструкцию в App Store и подготовить место под перенос.
+    </p>
+    <p>Официальная инструкция Onyx (Docker Compose): <a href="https://docs.onyx.app/deployment/local/docker">docs.onyx.app/deployment/local/docker</a></p>
+  </div>
+
+  <div class="card">
+    <h3>Дальше</h3>
+    <p>
+      Если хотите — я упакую полноценный compose Onyx под Umbrel:
+      данные и .env будут жить в <code>${APP_DATA_DIR}</code>, а UI будет открываться как обычное Umbrel-приложение.
+    </p>
+  </div>
+</body>
+</html>

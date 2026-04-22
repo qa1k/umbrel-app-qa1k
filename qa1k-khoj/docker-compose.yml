@@ -1,0 +1,64 @@
+version: "3.7"
+
+services:
+  app_proxy:
+    environment:
+      APP_HOST: qa1k-khoj_server_1
+      APP_PORT: 42110
+
+  database:
+    image: docker.io/pgvector/pgvector:pg15
+    restart: on-failure
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+    volumes:
+      - ${APP_DATA_DIR}/db:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  sandbox:
+    image: ghcr.io/khoj-ai/terrarium:latest
+    restart: on-failure
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:8080/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 2
+
+  search:
+    image: docker.io/searxng/searxng:latest
+    restart: on-failure
+    volumes:
+      - ${APP_DATA_DIR}/searxng:/etc/searxng
+    environment:
+      - SEARXNG_BASE_URL=http://localhost:8080/
+
+  server:
+    image: ghcr.io/khoj-ai/khoj:latest
+    restart: unless-stopped
+    depends_on:
+      database:
+        condition: service_healthy
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - ${APP_DATA_DIR}/config:/root/.khoj
+      - ${APP_DATA_DIR}/models:/root/.cache
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_HOST=database
+      - POSTGRES_PORT=5432
+      - KHOJ_DJANGO_SECRET_KEY=${APP_PASSWORD}
+      - KHOJ_DEBUG=False
+      - KHOJ_ADMIN_EMAIL=admin@umbrel.local
+      - KHOJ_ADMIN_PASSWORD=${APP_PASSWORD}
+      - KHOJ_TERRARIUM_URL=http://sandbox:8080
+      - KHOJ_SEARXNG_URL=http://search:8080
+    command: --host="0.0.0.0" --port=42110 -vv --anonymous-mode --non-interactive
