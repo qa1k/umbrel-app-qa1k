@@ -3,10 +3,10 @@ version: "3.7"
 services:
   app_proxy:
     environment:
-      APP_HOST: qa1k-websurfx_app_1
+      APP_HOST: qa1k-websurfx_server_1
       APP_PORT: 8080
 
-  app:
+  server:
     image: neonmmd/websurfx:latest
     restart: on-failure
     volumes:
