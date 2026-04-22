@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+APP_DIR="$(readlink -f "$(dirname "${BASH_SOURCE[0]}")/..")"
+APP_DATA_DIR="$APP_DIR/data"
+
+mkdir -p "$APP_DATA_DIR/data"
+

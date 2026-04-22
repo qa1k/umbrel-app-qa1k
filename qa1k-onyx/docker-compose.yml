@@ -9,5 +9,6 @@ services:
   web:
     image: nginx:1.27-alpine
     restart: on-failure
+    init: true
     volumes:
       - ${APP_DATA_DIR}/html:/usr/share/nginx/html:ro

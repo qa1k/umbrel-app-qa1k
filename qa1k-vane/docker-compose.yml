@@ -9,5 +9,6 @@ services:
   vane:
     image: itzcrazykns1337/vane:latest
     restart: unless-stopped
+    init: true
     volumes:
       - ${APP_DATA_DIR}/data:/home/vane/data

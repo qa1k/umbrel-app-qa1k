@@ -3,7 +3,7 @@ id: qa1k-onyx
 name: Onyx (bootstrap)
 tagline: Заготовка Umbrel-пакета для Onyx
 icon: https://raw.githubusercontent.com/onyx-dot-app/onyx/main/web/public/logo.png
-category: AI
+category: ai
 version: "0.1.0"
 port: 42020
 description: >-
@@ -23,7 +23,7 @@ repo: https://github.com/onyx-dot-app/onyx
 support: https://github.com/onyx-dot-app/onyx/issues
 gallery: []
 releaseNotes: >-
-  Первый черновик Umbrel-обёртки.
+  Добавлен pre-start hook (создание директорий данных) и init: true.
 dependencies: []
 path: ""
 defaultUsername: ""

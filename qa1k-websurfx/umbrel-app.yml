@@ -3,7 +3,7 @@ id: qa1k-websurfx
 name: WebSurfx
 tagline: Минималистичный self-hosted metasearch
 icon: https://raw.githubusercontent.com/neon-mmd/websurfx/rolling/assets/logo.png
-category: Utilities
+category: networking
 version: "0.1.0"
 port: 42021
 description: >-
@@ -15,7 +15,8 @@ repo: https://github.com/neon-mmd/websurfx
 support: https://github.com/neon-mmd/websurfx/issues
 gallery: []
 releaseNotes: >-
-  Первый черновик Umbrel-обёртки.
+  Исправление: добавлен pre-start hook, который создаёт дефолтный config.lua,
+  чтобы WebSurfx не падал с ошибкой «Config file/folder not found!!».
 dependencies: []
 path: ""
 defaultUsername: ""
